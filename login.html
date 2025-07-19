@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Exam Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+        .login-box {
+            max-width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-left: 5px solid #007acc;
+        }
+        .login-box h2 {
+            text-align: center;
+            color: #003366;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .login-box button:hover {
+            background-color: #005b99;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>🔐 Exam Login</h2>
+        <form onsubmit="return loginStudent()">
+            <input type="text" id="studentName" placeholder="Enter Your Name" required>
+            <input type="text" id="rollNo" placeholder="Enter Roll Number" required>
+            <button type="submit">Start Exam</button>
+        </form>
+    </div>
+
+    <script>
+        function loginStudent() {
+            const name = document.getElementById('studentName').value.trim();
+            const roll = document.getElementById('rollNo').value.trim();
+
+            if (name && roll) {
+                // You can store these in localStorage if needed
+                localStorage.setItem("studentName", name);
+                localStorage.setItem("rollNo", roll);
+                window.location.href = "index.html";
+                return false; // prevent form from refreshing page
+            } else {
+                alert("Please enter all details.");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
