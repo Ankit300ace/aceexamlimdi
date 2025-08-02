@@ -12,13 +12,23 @@
     </header>
     <main>
         <h2>Tasks (Choose Any 2)</h2>
-        <ol>
-            <li>Create a table showing 5 students' marks in 3 subjects.</li>
-            <li>Use formula to calculate Total and Average marks.</li>
-            <li>Apply Conditional Formatting (e.g., marks &lt; 40 in red).</li>
-            <li>Create a Bar or Pie Chart for marks.</li>
-            <li>Save the file as <code>YourName_Marks.xlsx</code></li>
-        </ol>
+          <button onclick="showRandomImage()">Show Random Image</button>
+  <img id="randomImage" src="" alt="Random Image will appear here" />
+
+  <script>
+    const images = [
+      'excel.PNG',
+      'excel1.PNG',
+      'excel2.PNG',
+      'excel3.PNG',
+      'excel4.PNG'
+    ];
+
+    function showRandomImage() {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      document.getElementById('randomImage').src = images[randomIndex];
+    }
+  </script>
     </main>
     <footer>
         <p><a href="index.html">← Back to Main Menu</a></p>

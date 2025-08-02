@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>MS Word - Practical Exam</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <header>
@@ -12,12 +13,24 @@
     </header>
     <main>
         <h2>Tasks (Choose Any 2)</h2>
-        <ol>
-            <li>Type a paragraph about "My School" and apply bold, italics, underline formatting.</li>
-            <li>Insert a table with 3 columns: Subject, Marks, Grade.</li>
-            <li>Add header, footer, and page number to the document.</li>
-            <li>Save the file as <code>YourName_Word.docx</code></li>
-        </ol>
+       <button onclick="showRandomImage()">Show Random Image</button>
+  <img id="randomImage" src="" alt="Random Image will appear here" />
+
+  <script>
+    const images = [
+      'paragraph.png',
+      'paragraph1.png',
+      'paragraph2.png',
+      'paragraph3.png',
+      'paragraph4.png',
+      'paragraph5.png'
+    ];
+
+    function showRandomImage() {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      document.getElementById('randomImage').src = images[randomIndex];
+    }
+  </script>
     </main>
     <footer>
         <p><a href="index.html">← Back to Main Menu</a></p>
